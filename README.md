@@ -40,7 +40,7 @@
 
 ## Download
 
-- The latest version of **uYouPlus** can be found under [Releases](https://github.com/qnblackcat/uYouPlus/releases/latest).
+- The latest version of **uYouPlus** can be found under [Releases](https://github.com/entitledf0rests/uYouPlus4me/releases).
 - **Compatibility:** Requires iOS/iPadOS 14.0 or later.
 - For AltStore user: 
 
