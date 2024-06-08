@@ -8,9 +8,12 @@ on:
     inputs:
       uyou_version:
         description: "The version of uYou"
-        default: "3.0.3"
+        default: "3.0.4"
         required: true
-        type: string
+        type: choice
+        options:
+          - 3.0.4
+          - 3.0.3
       decrypted_youtube_url:
         description: "Direct URL to the decrypted YouTube ipa. The version of YouTube will be detected automatically."
         default: ""
