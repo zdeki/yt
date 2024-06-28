@@ -12,7 +12,7 @@ on:
         required: true
         type: string
       decrypted_youtube_url:
-        description: "Direct URL to the decrypted YouTube ipa. The version of YouTube will be detected automatically."
+        description: "Direct URL to the decrypted YouTube ipa. The version of YouTube will be detected automatically (19.20.2 reccomended)."
         default: ""
         required: true
         type: string
