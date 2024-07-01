@@ -66,3 +66,6 @@
 [submodule "Tweaks/youtube-native-share"]
 	path = Tweaks/youtube-native-share
 	url = https://github.com/cameren2k/youtube-native-share.git
+[submodule "Tweaks/YouGroupSettings"]
+	path = Tweaks/YouGroupSettings
+	url = https://github.com/PoomSmart/YouGroupSettings.git
