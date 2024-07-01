@@ -205,4 +205,7 @@ static void refreshUYouAppearance() {
 
     // Disable uYou's playback speed controls (prevent crash on video playback https://github.com/therealFoxster/uYouPlus/issues/2#issuecomment-1894912963)
     // [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"showPlaybackRate"];
+    
+    // Disable uYou's adblock
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"removeYouTubeAds"];
 }
