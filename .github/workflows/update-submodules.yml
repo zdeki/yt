@@ -17,10 +17,10 @@ jobs:
     name: Update submodules
     runs-on: ubuntu-latest
     env:
-      PARENT_REPOSITORY: 'qnblackcat/uYouPlus'
+      PARENT_REPOSITORY: 'iqbal1992/uYouPlus'
       CHECKOUT_BRANCH: 'main'
       PR_AGAINST_BRANCH: 'main'
-      OWNER: 'qnblackcat'
+      OWNER: 'iqbal1992'
 
     steps:
       ##########################
