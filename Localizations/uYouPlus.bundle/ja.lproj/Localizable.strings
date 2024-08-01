@@ -11,7 +11,7 @@
 "COPY_SETTINGS_DESC" = "現在のすべての設定をクリップボードにコピーします";
 "PASTE_SETTINGS" = "設定を貼り付け";
 "PASTE_SETTINGS_DESC" = "クリップボードから設定を貼り付けて適用します";
-"PASTE_SETTINGS_ALERT" = "Are you sure you want to paste the settings?";
+"PASTE_SETTINGS_ALERT" = "設定をペーストしてもよろしいですか？";
 
 "QUIT_YOUTUBE" = "YouTubeを終了";
 
