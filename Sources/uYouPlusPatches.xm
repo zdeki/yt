@@ -6,7 +6,7 @@
 %hook NSBundle
 - (NSDictionary *)infoDictionary {
     NSMutableDictionary *info = %orig.mutableCopy;
-    if ([self isEqual:NSBundle.mainBundle])
+    if ([self isEqual:NSBundle.mainBundle] && [[NSUserDefaults standardUserDefaults] boolForKey:@"GoogleSignInFix_enabled"]) {
         info[@"CFBundleIdentifier"] = @"com.google.ios.youtube";
     return info;
 }
