@@ -7,9 +7,9 @@
 "REPORT_AN_ISSUE" = "Report an issue";
 "ADD_TITLE" = "Add your title here...";
 
-"COPY_SETTINGS" = "Copy Settings";
+"COPY_SETTINGS" = "Copy settings";
 "COPY_SETTINGS_DESC" = "Copy all current settings to the clipboard";
-"PASTE_SETTINGS" = "Paste Settings";
+"PASTE_SETTINGS" = "Paste settings";
 "PASTE_SETTINGS_DESC" = "Paste settings from clipboard and apply";
 "PASTE_SETTINGS_ALERT" = "Are you sure you want to paste the settings?";
 
@@ -39,8 +39,8 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "⏯️ Opzioni Video Player";
 
-"SLIDE_TO_SEEK" = "Enable Slide to seek";
-"SLIDE_TO_SEEK_DESC" = "Bring back the Slide to seek gesture.";
+"SLIDE_TO_SEEK" = "Enable slide to seek";
+"SLIDE_TO_SEEK_DESC" = "Bring back the slide to seek gesture.";
 
 "DISABLE_DOUBLE_TAP_TO_SEEK" = "Disable double tap to seek";
 "DISABLE_DOUBLE_TAP_TO_SEEK_DESC" = "";
@@ -54,7 +54,7 @@
 "YT_MINIPLAYER" = "Abilita il Miniplayer su tutti i video di YouTube";
 "YT_MINIPLAYER_DESC" = "Video YouTube Kids per esempio.";
 
-"HIDE_REMIX_BUTTON" = "Hides Remix button";
+"HIDE_REMIX_BUTTON" = "Hide Remix button";
 "HIDE_REMIX_BUTTON_DESC" = "";
 
 "HIDE_CLIP_BUTTON" = "Hide Clip button";
