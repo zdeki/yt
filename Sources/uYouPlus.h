@@ -24,8 +24,8 @@
 #import <YouTubeHeader/ELMPBElement.h>
 #import <YouTubeHeader/ELMPBProperties.h>
 #import <YouTubeHeader/ELMPBIdentifierProperties.h>
-#import <YouTubeHeader/YTMainAppControlsOverlayView.h>
-@interface YTMainAppControlsOverlayView(uYou)
+// #import <YouTubeHeader/YTMainAppControlsOverlayView.h>
+@interface YTMainAppControlsOverlayView: UIView
 - (void)uYou;
 @end
 
@@ -77,8 +77,8 @@ static NSString *const kFlex = @"flex_enabled";
 @end
 
 // Hide autoplay switch / CC button
-@interface YTMainAppControlsOverlayView : UIView
-@end
+// @interface YTMainAppControlsOverlayView : UIView
+// @end
 
 // Skips content warning before playing *some videos - @PoomSmart
 @interface YTPlayabilityResolutionUserActionUIController : NSObject
