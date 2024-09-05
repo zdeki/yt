@@ -120,8 +120,19 @@ YTMainAppControlsOverlayView *controlsOverlayView;
         for (ELMPBElement *element in listOptions) {
             ELMPBProperties *properties = [element properties];
             ELMPBIdentifierProperties *identifierProperties = [properties firstSubmessage];
-            NSString *identifier = [identifierProperties identifier];
-            if ([identifier containsString:@"offline_upsell_dialog"]) {
+            // 19.30.2
+            if ([identifierProperties respondsToSelector:@selector(identifier)]) {
+                NSString *identifier = [identifierProperties identifier];
+                if ([identifier containsString:@"offline_upsell_dialog"]) {
+                    if ([controlsOverlayView respondsToSelector:@selector(uYou)]) {
+                        [controlsOverlayView uYou];
+                    }
+                    return;
+                }
+            }
+            // 19.20.2
+            NSString *description = [identifierProperties description];
+            if ([description containsString:@"offline_upsell_dialog"]) {
                 if ([controlsOverlayView respondsToSelector:@selector(uYou)]) {
                     [controlsOverlayView uYou];
                 }
