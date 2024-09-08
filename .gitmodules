@@ -69,3 +69,6 @@
 [submodule "Tweaks/YouGroupSettings"]
 	path = Tweaks/YouGroupSettings
 	url = https://github.com/PoomSmart/YouGroupSettings.git
+[submodule "Tweaks/YouChooseQuality"]
+	path = Tweaks/YouChooseQuality
+	url = https://github.com/PoomSmart/YouChooseQuality.git
