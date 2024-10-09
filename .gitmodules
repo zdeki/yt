@@ -70,5 +70,5 @@
 	path = Tweaks/YouChooseQuality
 	url = https://github.com/PoomSmart/YouChooseQuality.git
 [submodule "Alderis"]
-	path = Alderis
+	path = Tweaks/Alderis
 	url = https://github.com/cameren2k/Alderis.git
