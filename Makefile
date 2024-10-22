@@ -1,4 +1,6 @@
 export TARGET = iphone:clang:16.5:14.0
+export SDK_PATH = $(THEOS)/sdks/iPhoneOS16.5.sdk/
+export SYSROOT = $(SDK_PATH)
 export ARCHS = arm64
 
 export libcolorpicker_ARCHS = arm64
