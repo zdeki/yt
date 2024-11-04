@@ -126,7 +126,7 @@ jobs:
 
       - name: Download and Move .deb File
         run: |
-          wget --no-proxy --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 15.1; rv:21.0) Gecko/20100101 Firefox/21.0" "https://miro92.com/repo/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
+          wget "https://miro92.com/repo/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
           mkdir -p Tweaks/uYou
           mv file.deb Tweaks/uYou/
      
