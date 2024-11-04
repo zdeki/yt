@@ -30,7 +30,7 @@
     SWITCH(title, description, key, SHOW_RELAUNCH_YT_SNACKBAR)
 
 NSArray *copyKeys = @[
-    // UYOUPLUS - Video player Keys
+    /* MAIN     Player Keys */
     kSlideToSeek,
     kSnapToChapter,
     kPinchToZoom,
@@ -39,7 +39,7 @@ NSArray *copyKeys = @[
     kHideClipButton,
     kHideDownloadButton,
     kStockVolumeHUD,
-    // UYOUPLUS - Video controls overlay Keys
+    /* MAIN     Button Keys */
     kHideAutoplaySwitch,
     kHideCC,
     kHideHUD,
@@ -48,10 +48,10 @@ NSArray *copyKeys = @[
     kRedProgressBar,
     kHideHoverCards,
     kHideRightPanel,
-    // UYOUPLUS - Shorts controls overlay Keys
+    /* MAIN     Shorts Keys */ 
     kHideBuySuperThanks,
     kHideSubscriptions,
-    // UYOUPLUS - Miscellaneous Keys
+    /* MAIN       Misc Keys */ 
     kHideiSponsorBlockButton,
     kDisableHints,
     kYTStartupAnimation,
@@ -62,7 +62,7 @@ NSArray *copyKeys = @[
     kReExplore,
     kGoogleSigninFix,
     kFlex,
-    // uYou Keys (some of them) - https://github.com/miro92/uyou-for-youtube
+    /* TWEAK      uYou Keys */
     @"showedWelcomeVC",
     @"hideShortsTab",
     @"hideCreateTab",
@@ -77,22 +77,9 @@ NSArray *copyKeys = @[
     @"hideShortsCells",
     @"removeShortsCell",
     @"startupPage",
-    // DontEatMyContent Keys - https://github.com/therealFoxster/DontEatMyContent/blob/master/Tweak.h
-    @"DEMC_enabled", @"DEMC_colorViewsEnabled", @"DEMC_safeAreaConstant", @"DEMC_disableAmbientMode", 
-    @"DEMC_limitZoomToFill", @"DEMC_enableForAllVideos",
-    // Return YouTube Dislikes Keys - https://github.com/PoomSmart/Return-YouTube-Dislikes/blob/main/TweakSettings.h
-    @"RYD-ENABLED", @"RYD-VOTE-SUBMISSION", @"RYD-EXACT-LIKE-NUMBER", @"RYD-EXACT-NUMBER",
-    // YTVideoOverlay Keys - https://github.com/therealFoxster/DontEatMyContent/blob/master/Tweak.h
-    @"YTVideoOverlay-YouMute-Enabled", @"YTVideoOverlay-YouQuality-Enabled", 
-    @"YTVideoOverlay-YouMute-Position", @"YTVideoOverlay-YouQuality-Position",
-    // YouPiP Keys - https://github.com/PoomSmart/YouPiP/blob/main/Header.h
-    @"YouPiPPosition", @"CompatibilityModeKey", @"PiPActivationMethodKey", @"PiPActivationMethod2Key", 
-    @"NoMiniPlayerPiPKey", @"NonBackgroundableKey",
-    // YTUHD Keys - https://github.com/PoomSmart/YTUHD/blob/master/Header.h
+    /* TWEAK     YTUHD Keys */
     @"EnableVP9",
-    @"AllVP9",
-    // YouTube Keys
-    @"inline_muted_playback_enabled"
+    @"AllVP9"
 ];
 
 static const NSInteger uYouPlusSection = 500;
