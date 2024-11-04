@@ -50,7 +50,11 @@ jobs:
 
     steps:
       - name: Checkout Main
+<<<<<<< HEAD
         uses: actions/checkout@v4.1.1
+=======
+        uses: actions/checkout@v4.2.2
+>>>>>>> parent of 24e6559 (Update buildapp.yml)
         with:
           path: main
           submodules: recursive
@@ -70,7 +74,11 @@ jobs:
         run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH 
 
       - name: Setup Theos
+<<<<<<< HEAD
         uses: actions/checkout@v4.1.1
+=======
+        uses: actions/checkout@v4.2.2
+>>>>>>> parent of 24e6559 (Update buildapp.yml)
         with:
           repository: theos/theos
           ref: master
@@ -97,7 +105,11 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
+<<<<<<< HEAD
         uses: actions/checkout@v4.1.1
+=======
+        uses: actions/checkout@v4.2.2
+>>>>>>> parent of 24e6559 (Update buildapp.yml)
         with:
           repository: qnblackcat/theos-jailed
           ref: master
