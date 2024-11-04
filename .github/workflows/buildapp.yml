@@ -1,6 +1,8 @@
 # Original idea by @ISnackable. Thanks to him for handling the hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
+
 name: Build and Release uYouPlus
+
 on:
   workflow_dispatch:
     inputs:
@@ -34,32 +36,39 @@ on:
         default: false
         required: false
         type: boolean
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
 jobs:
   build:
     name: Build uYouPlus
     runs-on: macos-12
     permissions:
       contents: write
+   
     steps:
       - name: Checkout Main
         uses: actions/checkout@v4.1.1
         with:
           path: main
           submodules: recursive
+    
       - name: Caching brew dependencies
         id: brew_cache
         uses: tecolicom/actions-use-homebrew-tools@v1.2
         with:
           tools: ldid dpkg make
           cache: yes
+    
       - name: Install Dependencies
         if: steps.brew_cache.outputs.cache-hit != 'true'
         run: brew install ldid dpkg make
+   
       - name: Set PATH environment variable
         run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH 
+   
       - name: Setup Theos
         uses: actions/checkout@v4.1.1
         with:
@@ -86,6 +95,7 @@ jobs:
           mv *.sdk $THEOS/sdks
         env:
           THEOS: ${{ github.workspace }}/theos
+   
       - name: Setup Theos Jailed
         uses: actions/checkout@v4.1.1
         with:
@@ -98,6 +108,7 @@ jobs:
           ./theos-jailed/install
         env:
           THEOS: ${{ github.workspace }}/theos
+   
       - name: Prepare YouTube iPA
         id: prepare_youtube
         run: |
@@ -118,20 +129,10 @@ jobs:
           wget "https://repo.miro92.com/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
           mkdir -p Tweaks/uYou
           mv file.deb Tweaks/uYou/
+     
       - name: Fix compiling & Build Package
         id: build_package
         run: |
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
           mkdir -p theos/lib/iphone/rootless
           cd ${{ github.workspace }}/main
           sed -i '' "27s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
@@ -145,6 +146,7 @@ jobs:
           UYOU_VERSION: ${{ inputs.uyou_version }}
           BUNDLE_ID: ${{ inputs.bundle_id }}
           APP_NAME: ${{ inputs.app_name }}
+   
       - name: Upload Artifact
         if: ${{ inputs.upload_artifact }}
         uses: actions/upload-artifact@v4.3.0
@@ -155,6 +157,7 @@ jobs:
           name: uYouPlus_${{ env.YOUTUBE_VERSION }}_${{ env.UYOU_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
+     
       - name: Create Release
         id: create_release
         uses: qnblackcat/action-gh-release@master
@@ -167,4 +170,4 @@ jobs:
           tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.UYOU_VERSION }}-(${{ github.run_number }})
           name: v${{ env.YOUTUBE_VERSION }}-${{ env.UYOU_VERSION }}-(${{ github.run_number }})
           files: main/packages/*.ipa
-draft: ${{ env.DRAFT }}
+          draft: ${{ env.DRAFT }}
