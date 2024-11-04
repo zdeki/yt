@@ -126,7 +126,7 @@ jobs:
 
       - name: Download and Move .deb File
         run: |
-          wget "https://miro92.com/repo/debs/com.miro.uyou_3.0.4_iphoneos-arm.deb" -O file.deb
+          wget "https://repo.miro92.com/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
           mkdir -p Tweaks/uYou
           mv file.deb Tweaks/uYou/
      
