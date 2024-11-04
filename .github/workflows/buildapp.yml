@@ -126,7 +126,7 @@ jobs:
 
       - name: Download and Move .deb File
         run: |
-          wget "https://miro92.com/repo/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
+          wget -U "Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Mobile/15E148 Safari/604.1" "https://miro92.com/repo/debs/com.miro.uyou_3.0.3_iphoneos-arm.deb" -O file.deb
           mkdir -p Tweaks/uYou
           mv file.deb Tweaks/uYou/
      
