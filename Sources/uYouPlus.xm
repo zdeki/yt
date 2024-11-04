@@ -76,6 +76,7 @@ static BOOL findCell(ASNodeController *nodeController, NSArray <NSString *> *ide
 }
 
 %hook ASCollectionView
+
 - (CGSize)sizeForElement:(ASCollectionElement *)element {
     if ([self.accessibilityIdentifier isEqualToString:@"id.video.scrollable_action_bar"]) {
         ASCellNode *node = [element node];
@@ -94,6 +95,7 @@ static BOOL findCell(ASNodeController *nodeController, NSArray <NSString *> *ide
     }
     return %orig;
 }
+
 %end
 
 // Use stock iOS volume HUD
@@ -101,46 +103,6 @@ static BOOL findCell(ASNodeController *nodeController, NSArray <NSString *> *ide
 %hook YTColdConfig
 - (BOOL)iosUseSystemVolumeControlInFullscreen {
     return IS_ENABLED(kStockVolumeHUD) ? YES : %orig;
-}
-%end
-
-// Replace YouTube's download with uYou's
-YTMainAppControlsOverlayView *controlsOverlayView;
-%hook YTMainAppControlsOverlayView
-- (id)initWithDelegate:(id)arg1 {
-    controlsOverlayView = %orig;
-    return controlsOverlayView;
-}
-%end
-%hook YTElementsDefaultSheetController
-+ (void)showSheetController:(id)arg1 showCommand:(id)arg2 commandContext:(id)arg3 handler:(id)arg4 {
-    if (IS_ENABLED(kReplaceYTDownloadWithuYou) && [arg2 isKindOfClass:%c(ELMPBShowActionSheetCommand)]) {
-        ELMPBShowActionSheetCommand *showCommand = (ELMPBShowActionSheetCommand *)arg2;
-        NSArray *listOptions = [showCommand listOptionArray];
-        for (ELMPBElement *element in listOptions) {
-            ELMPBProperties *properties = [element properties];
-            ELMPBIdentifierProperties *identifierProperties = [properties firstSubmessage];
-            // 19.30.2
-            if ([identifierProperties respondsToSelector:@selector(identifier)]) {
-                NSString *identifier = [identifierProperties identifier];
-                if ([identifier containsString:@"offline_upsell_dialog"]) {
-                    if ([controlsOverlayView respondsToSelector:@selector(uYou)]) {
-                        [controlsOverlayView uYou];
-                    }
-                    return;
-                }
-            }
-            // 19.20.2
-            NSString *description = [identifierProperties description];
-            if ([description containsString:@"offline_upsell_dialog"]) {
-                if ([controlsOverlayView respondsToSelector:@selector(uYou)]) {
-                    [controlsOverlayView uYou];
-                }
-                return;
-            }
-        }
-    }
-    %orig;
 }
 %end
 
@@ -458,8 +420,5 @@ YTMainAppControlsOverlayView *controlsOverlayView;
     }
     if (![allKeys containsObject:kGoogleSigninFix]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kGoogleSigninFix];
-    }
-    if (![allKeys containsObject:kReplaceYTDownloadWithuYou]) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kReplaceYTDownloadWithuYou];
     }
 }
