@@ -127,7 +127,6 @@ jobs:
       - name: Download and Move .deb File
         run: |
           mkdir -p Tweaks/uYou
-          mv file.deb Tweaks/uYou/
      
       - name: Fix compiling & Build Package
         id: build_package
