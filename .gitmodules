@@ -26,6 +26,9 @@
 	path = Tweaks/YouTubeHeader
 	url = https://github.com/PoomSmart/YouTubeHeader.git
 	branch = main
+[submodule "Extensions"]
+	path = Extensions
+	url = https://github.com/cameren2k/OpenYoutubeAndShorts.git
 [submodule "Tweaks/YTABConfig"]
 	path = Tweaks/YTABConfig
 	url = https://github.com/PoomSmart/YTABConfig.git
@@ -68,6 +71,3 @@
 [submodule "Tweaks/YouChooseQuality"]
 	path = Tweaks/YouChooseQuality
 	url = https://github.com/PoomSmart/YouChooseQuality.git
-[submodule "Extensions"]
-	path = Extensions
-	url = https://github.com/cameren2k/OpenYoutubeAndShorts.git
