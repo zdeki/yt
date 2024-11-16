@@ -390,28 +390,6 @@ YTMainAppControlsOverlayView *controlsOverlayView;
 }
 %end
 
-// Hide search ads by @PoomSmart - https://github.com/PoomSmart/YouTube-X
-// %hook YTIElementRenderer
-// - (NSData *)elementData {
-//     if (self.hasCompatibilityOptions && self.compatibilityOptions.hasAdLoggingData)
-//         return nil;
-//     return %orig;
-// }
-// %end
-
-// %hook YTSectionListViewController
-// - (void)loadWithModel:(YTISectionListRenderer *)model {
-//     NSMutableArray <YTISectionListSupportedRenderers *> *contentsArray = model.contentsArray;
-//     NSIndexSet *removeIndexes = [contentsArray indexesOfObjectsPassingTest:^BOOL(YTISectionListSupportedRenderers *renderers, NSUInteger idx, BOOL *stop) {
-//         YTIItemSectionRenderer *sectionRenderer = renderers.itemSectionRenderer;
-//         YTIItemSectionSupportedRenderers *firstObject = [sectionRenderer.contentsArray firstObject];
-//         return firstObject.hasPromotedVideoRenderer || firstObject.hasCompactPromotedVideoRenderer || firstObject.hasPromotedVideoInlineMutedRenderer;
-//     }];
-//     [contentsArray removeObjectsAtIndexes:removeIndexes];
-//     %orig;
-// }
-// %end
-
 // A/B flags
 %hook YTColdConfig 
 // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
