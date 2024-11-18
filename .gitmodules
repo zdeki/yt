@@ -61,7 +61,7 @@
 	url = https://github.com/therealFoxster/YTSpeed.git
 [submodule "Tweaks/YouTube-X"]
 	path = Tweaks/YouTube-X
-	url = https://github.com/cameren2k/YouTube-X/
+	url = https://github.com/PoomSmart/YouTube-X/
 [submodule "Tweaks/youtube-native-share"]
 	path = Tweaks/youtube-native-share
 	url = https://github.com/cameren2k/youtube-native-share.git
